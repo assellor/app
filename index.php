@@ -1,3 +1,9 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+</head>
+</html>
 <?php
 
 $config = include 'config.php';
@@ -28,8 +34,8 @@ include_once 'navbar.php';
     <div class="container">
 
         <section class="jumbotron text-center pt-5 mb-5 bg-white">
-            <div class="container">
-                <h1 class="jumbotron-heading"><?php echo getTitle(); ?></h1>
+            <div>
+                <h1 style="font-family: “aquiline” " class="jumbotron-heading"><?php echo getTitle(); ?></h1>
             </div>
         </section>
 
@@ -37,7 +43,9 @@ include_once 'navbar.php';
             <div class="col-md-12">
                 <div class="row">
                     <div class="col-6">
-                        <p>Tebrikler! Seçmen şapka sizi <strong><a href="houses.php" style="background-color: <?php echo houseColor($house); ?>; color: #fff;"><?php echo $house; ?></a></strong> evine yerleştirdi.</p>
+                        <p>Tebrikler! Seçmen şapka sizi <strong><a href="houses.php"
+                                                                   style="font-family: “aquiline”; font-size: 32px; background-color: <?php echo houseColor($house); ?>; color: #fff;"> <?php echo $house; ?></a></strong>
+                            evine yerleştirdi.</p>
                         <span class="mb-3">Ufak Bilgiler</span>
                         <ul class="mt-3">
                             <li>

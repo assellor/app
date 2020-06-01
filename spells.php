@@ -1,3 +1,10 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+</head>
+</html>
+
 <?php
 
 $config = include 'config.php';
@@ -37,7 +44,7 @@ include 'navbar.php';
 
         <section class="jumbotron text-center pt-5 mb-5 bg-white">
             <div class="container">
-                <h1 class="jumbotron-heading"><?php echo getTitle(); ?></h1>
+                <h1 style="font-family: “aquiline”" class="jumbotron-heading"><?php echo getTitle(); ?></h1>
             </div>
         </section>
 

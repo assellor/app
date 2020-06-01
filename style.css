@@ -1,0 +1,14 @@
+@font-face {
+    font-family: “aquiline”;
+    src: url("assets/images/fonts/Aquiline.ttf") ;
+}
+
+
+body {
+    background-image: url("assets/images/IndexBackground.jpg");
+    background-repeat: repeat-y;
+    background-attachment: scroll;
+    background-color: white;
+    background-position: top center;
+}
+

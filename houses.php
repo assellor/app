@@ -1,3 +1,10 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+</head>
+</html>
+
 <?php
 
 $config = include 'config.php';
@@ -15,7 +22,7 @@ $houseDetails = [];
 
 foreach ($decodedHouses as $decode) {
     $house = new House();
-    
+
     try {
         $house->setId($decode['_id'])
             ->setName($decode['name'])
@@ -26,12 +33,12 @@ foreach ($decodedHouses as $decode) {
     } catch (WrongIdTypeException $typeException) {
         die($typeException->getMessage());
     }
-    
+
     $house->headOfHouse = $decode['headOfHouse'] ?? null;
     $house->mascot = $decode['mascot'] ?? null;
     $house->houseGhost = $decode['houseGhost'] ?? null;
     $house->school = $decode['school'] ?? null;
-    
+
     $houseDetails[] = $house;
 }
 
@@ -52,19 +59,21 @@ include 'navbar.php';
 
         <section class="jumbotron text-center pt-5 mb-5 bg-white">
             <div class="container">
-                <h1 class="jumbotron-heading"><?php echo getTitle(); ?></h1>
+                <h1 style="font-family: “aquiline”" class="jumbotron-heading"><?php echo getTitle(); ?></h1>
             </div>
         </section>
 
         <div class="row bg-white p-5">
             <?php
             foreach ($houseDetails as $detail):
-            ?>
+                ?>
                 <div class="col-md-6">
                     <div class="card mb-4 box-shadow">
-                        <img class="card-img-top" src="assets/images/houses/<?php echo strtolower($detail->name) ?>.jpg" alt="<?php echo $detail->name; ?>">
+                        <img class="card-img-top" src="assets/images/houses/<?php echo strtolower($detail->name) ?>.jpg"
+                             alt="<?php echo $detail->name; ?>">
                         <div class="card-body">
-                            <h5 align="center" class="card-title"><strong><?php echo strtoupper($detail->name); ?></strong></h5>
+                            <h5 align="center" class="card-title">
+                                <strong><?php echo strtoupper($detail->name); ?></strong></h5>
                             <p class="card-text">
                                 <strong>Bina Kurucusunun Soyadı:</strong> <?php echo $detail->getFounder(); ?>
                             </p>
@@ -72,7 +81,7 @@ include 'navbar.php';
                                 <strong>Bina Müdürü:</strong> <?php echo $detail->headOfHouse; ?>
                             </p>
                             <p class="card-text">
-                                <strong>Bina Maskotu  :</strong> <?php echo $detail->mascot; ?>
+                                <strong>Bina Maskotu :</strong> <?php echo $detail->mascot; ?>
                             </p>
                             <p class="card-text">
                                 <strong>Bina Hayaleti :</strong> <?php echo $detail->houseGhost; ?>

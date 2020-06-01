@@ -1,3 +1,9 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+</head>
+</html>
 <?php
 
 $config = include 'config.php';
@@ -53,9 +59,11 @@ include 'navbar.php';
 
         <section class="jumbotron text-center pt-5 mb-5 bg-white">
             <div class="container">
-                <h1 class="jumbotron-heading"><?php echo getTitle(); ?></h1>
-                <?php if(isset($_GET['house'])): ?>
-                    <img class="card-img-top" style="width: 5%" src="/assets/images/houses/<?php echo $_GET['house'] ?>.jpg" alt="<?php echo $_GET['house']; ?>">
+                <h1 style="font-family: “aquiline”" class="jumbotron-heading"><?php echo getTitle(); ?></h1>
+                <?php if (isset($_GET['house'])): ?>
+                    <img class="card-img-top" style="width: 5%"
+                         src="/assets/images/houses/<?php echo $_GET['house'] ?>.jpg"
+                         alt="<?php echo $_GET['house']; ?>">
                     <span><?php echo strtoupper($_GET['house']) ?></span>
                 <?php endif; ?>
             </div>
@@ -77,19 +85,20 @@ include 'navbar.php';
                 <tbody>
                 <?php
                 foreach ($characterDetails as $detail):
-                ?>
+                    ?>
                     <tr>
                         <td>
-                            <img style=" width: 50%; height: auto;" alt="" class="card-img-top" src="assets/images/characters/<?php echo $detail['name']?>.jpg">
+                            <img style=" width: 50%; height: auto;" alt="" class="card-img-top"
+                                 src="assets/images/characters/<?php echo $detail['name'] ?>.jpg">
                         </td>
-                        <td><?php echo $detail['name'];?></td>
-                        <td><?php echo $detail['role'];?></td>
-                        <td><?php echo $detail['house'];?></td>
-                        <td><?php echo $detail['bloodStatus'];?></td>
-                        <td><?php echo $detail['species'];?></td>
+                        <td><?php echo $detail['name']; ?></td>
+                        <td><?php echo $detail['role']; ?></td>
+                        <td><?php echo $detail['house']; ?></td>
+                        <td><?php echo $detail['bloodStatus']; ?></td>
+                        <td><?php echo $detail['species']; ?></td>
                     </tr>
                 <?php
-                    endforeach;
+                endforeach;
                 ?>
                 </tbody>
             </table>
